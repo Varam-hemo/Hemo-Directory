@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "983019756452",
+    "firebase_url": "https://hemo-directory.firebaseio.com",
+    "project_id": "hemo-directory",
+    "storage_bucket": "hemo-directory.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983019756452:android:81d132f70f544944c73f31",
+        "android_client_info": {
+          "package_name": "com.rohith.varam.hemo_directory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983019756452-raofthr33tu095htimek2vg7uratkcm9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rohith.varam.hemo_directory",
+            "certificate_hash": "0139b31d04a4cc832ced82c214eba40689d98030"
+          }
+        },
+        {
+          "client_id": "983019756452-l38okkgdffsufblbd4etid1auoics2di.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8l8SDnv7Zuvs0-9fmW8JQ6ENThJTSR8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983019756452-l38okkgdffsufblbd4etid1auoics2di.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:hemo_directory/ui/views/home_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,10 +13,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Hemophilia Federation India (HFI)'),
+      home: HomePage(),
     );
   }
 }
+
+
+
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);

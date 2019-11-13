@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:hemo_directory/core/models/user_repository.dart';
 import 'package:provider/provider.dart';
@@ -71,12 +72,12 @@ class _LoginPageState extends State<LoginPage> {
       });
       try {
         if (_formType == FormType.login) {
-          bool userId =
-              await Provider.of<UserRepository>(context).signIn(_email, _password);
+          bool userId = await Provider.of<UserRepository>(context)
+              .signIn(_email, _password);
           print("Signed in: $userId");
         } else {
-          bool user = await Provider.of<UserRepository>(context).createUserWithEmailAndPassword(
-              _email, _password, _name);
+          bool user = await Provider.of<UserRepository>(context)
+              .createUserWithEmailAndPassword(_email, _password, _name);
 
           print("Created user: $user");
           print("Created User");
@@ -103,7 +104,8 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = true;
     });
     try {
-      bool userId = await Provider.of<UserRepository>(context).signInWithGoogle();
+      bool userId =
+          await Provider.of<UserRepository>(context).signInWithGoogle();
       print("Signed in: $userId");
       setState(() {
         _isLoading = false;
@@ -137,7 +139,14 @@ class _LoginPageState extends State<LoginPage> {
     _isIos = Theme.of(context).platform == TargetPlatform.iOS;
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text("Factor Status Login"),
+          title: Center(
+            child: Text("Hemophilia Federation (India)"),
+          ),
+          leading: new IconButton(
+            icon: new Image.asset("assets/images/logo.png"),
+            tooltip: 'Closes application',
+            onPressed: () {},
+          ),
         ),
         body: Stack(
           children: <Widget>[

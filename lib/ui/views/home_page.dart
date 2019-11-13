@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hemo_directory/core/models/user_repository.dart';
+import 'package:hemo_directory/ui/widgets/MainMenuItem.dart';
+import 'package:hemo_directory/ui/widgets/MyScaffold.dart';
 import 'package:hemo_directory/ui/widgets/splash.dart';
 import 'package:provider/provider.dart';
 
@@ -19,13 +21,13 @@ class HomePage extends StatelessWidget {
               return Splash();
             case Status.Unauthenticated:
             case Status.Authenticating:
-               return LoginPage();
+              return LoginPage();
             case Status.Authenticated:
               return UserInfoPage(user: user.user);
             default:
-            return new Container(
-              color: Colors.redAccent,
-            );
+              return new Container(
+                color: Colors.redAccent,
+              );
           }
         },
       ),
@@ -39,20 +41,44 @@ class UserInfoPage extends StatelessWidget {
   const UserInfoPage({Key key, this.user}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("User Info"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(user.email),
-            RaisedButton(
-              child: Text("SIGN OUT"),
-              onPressed: () => Provider.of<UserRepository>(context).signOut(),
-            )
-          ],
+    return MyScaffold(
+      isHome: true,
+      child: Container(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/directory');
+                },
+                child: MainMenuItem(
+                  title: "Directory",
+                  iconData: Icons.contacts,
+                  myColor: Colors.red,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/htc');
+                },
+                child: MainMenuItem(
+                  title: "HTC",
+                  iconData: Icons.local_hospital,
+                  myColor: Colors.brown,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/about');
+                },
+                child: MainMenuItem(
+                  title: "About",
+                  iconData: Icons.account_box,
+                  myColor: Colors.blue,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

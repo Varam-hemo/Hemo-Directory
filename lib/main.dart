@@ -1,6 +1,8 @@
-
 import 'package:flutter/material.dart';
+import 'package:hemo_directory/ui/views/about_page.dart';
+import 'package:hemo_directory/ui/views/directory_page.dart';
 import 'package:hemo_directory/ui/views/home_page.dart';
+import 'package:hemo_directory/ui/views/htc_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,17 +12,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hemophilia Federation India (HFI)',
+      routes: {
+        '/': (context) => HomePage(),
+        '/directory': (context) => DirectoryPage(),
+        '/htc': (context) => HTCPage(),
+        '/about': (context) => AboutPage(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
     );
   }
 }
-
-
-
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
